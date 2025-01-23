@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Button, Image, StyleSheet, Text, View, Pressable, TouchableOpacity, ScrollView, SafeAreaView, ActivityIndicator, FlatList } from 'react-native';
-import { getCountries } from './lib/countries';
-import { CountryFlatList } from './components/CountryFlatList';
+import { getCountries } from '../lib/countries';
+import { CountryFlatList } from './CountryFlatList';
+import { Link } from 'expo-router';
 
-export default function App() {
+export function Main() {
 
 
   const [countries, setCountries] = useState([]);
@@ -22,6 +23,15 @@ export default function App() {
       <StatusBar style="auto" />
 
       <SafeAreaView>
+
+        <Link asChild href="/about">
+             <Pressable >
+              <Text style={styles.text}>About</Text>
+             </Pressable>
+        </Link>
+
+
+
       <ScrollView>  
 
 
